@@ -1,0 +1,82 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+	padding-top: 20px;
+    background-color: #f0f0f0;
+}
+
+header h1 {
+  margin-top: 0; /* Often useful to reset default h1 margin */
+  padding-top: 200px; /* Use padding to move the text down within the header */
+}
+
+/* --- 1. Main Container (Aligns Left Column and Right Image Horizontally) --- */
+.main-layout-container {
+  display: flex; /* Makes button-column and image-area go side-by-side */
+  width: 800px; /* Example width - adjust as needed */
+  height: 500px; /* Example height - crucial for vertical stretching */
+  gap: 30px;
+}
+
+/* --- 2. Left Container (Arranges Buttons Vertically) --- */
+.button-column {
+  display: flex; 
+  flex-direction: column; /* STACKS the buttons one on top of the other */
+  justify-content: space-between; /* OPTIONAL: Spreads the buttons out vertically */
+  flex-shrink: 0; /* Prevents the column from shrinking */
+}
+
+/* --- 3. Right Container (Makes Image Take Up Remaining Space) --- */
+.image-area {
+  /* This property tells the image container to take up all available horizontal space */
+  flex-grow: 1; 
+}
+
+/* --- 4. Content Styling (Ensure Image Fills Its Container) --- */
+.button-column button {
+  /* Optional: gives buttons a consistent look */
+  margin-bottom: 5px; 
+}
+
+.image-area img {
+  width: 100%; /* Make the image fill the full width of its container */
+  height: 100%; /* Make the image fill the full height of its container */
+  object-fit: cover; /* Ensures the image covers the area without distorting (crops if necessary) */
+}
+
+img {
+    /*max-width: 80%;*/
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*margin: 20px 0;*/
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    filter: brightness(0.85);
+}
+
+.clicked-state {
+  /* Change the color */
+  background-color: darkgreen; 
+  /* Change the text color to the background color to "hide" it */
+  color: darkgreen; 
+  /* Optional: change border color, etc. */
+  border-color: darkgreen;
+}
