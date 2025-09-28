@@ -18,7 +18,8 @@ header h1 {
 /* --- 1. Main Container (Aligns Left Column and Right Image Horizontally) --- */
 .main-layout-container {
   display: flex; /* Makes button-column and image-area go side-by-side */
-  width: 800px; /* Example width - adjust as needed */
+  width: 100%; /* Example width - adjust as needed */
+  max-width: 800px;
   height: 500px; /* Example height - crucial for vertical stretching */
   gap: 30px;
 }
@@ -35,6 +36,7 @@ header h1 {
 .image-area {
   /* This property tells the image container to take up all available horizontal space */
   flex-grow: 1; 
+  min-width: 0;
 }
 
 /* --- 4. Content Styling (Ensure Image Fills Its Container) --- */
